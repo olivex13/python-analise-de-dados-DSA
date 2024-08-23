@@ -6,3 +6,21 @@ def limpa_tela():
         _= system ('cls')
     else:
         _= system('clear')
+
+def game():
+    limpa_tela()
+    print('\n Bem vindo(a) ao jogo da forca!')
+    print('Advinhe a palavra a baixo:\n')
+
+    palavras = ['banana', 'abacate', 'uva', 'morango', 'laranja']
+
+    palavra = random.choice(palavras)
+
+    letras_descobertadas = ['_' for letra in palavra]
+
+    chances = 6
+
+    letras_erradas = []
+
+
+
