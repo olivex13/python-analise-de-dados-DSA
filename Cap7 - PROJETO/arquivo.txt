@@ -22,5 +22,8 @@ def game():
 
     letras_erradas = []
 
+    while chances > 0:
+
+
 
 
