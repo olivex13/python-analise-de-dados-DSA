@@ -23,21 +23,32 @@ def game():
     letras_erradas = []
 
     while chances > 0:
-        print(' '.join(letras_descobertas))
-        print(f'Chances restantes: {chances}')
-        print('Letras erradas:', ' '.join(letras_erradas))
 
-        tentativa = input('Digite uma letra: ').lower()
+        print(" ".join(letras_descobertas))
+        print("\nChances restantes:", chances)
+        print("Letras erradas:", " ".join(letras_erradas))
+
+        tentativa = input("\nDigite uma letra: ").lower()
 
         if tentativa in palavra:
             index = 0
             for letra in palavra:
                 if tentativa == letra:
-                    letras_descobertas(index) = letra
+                    letras_descobertas[index] = letra
                 index += 1
-        else: 
+        else:
             chances -= 1
             letras_erradas.append(tentativa)
+
+        if "_" not in letras_descobertas:
+            print("\nVocê venceu, a palavra era:", palavra)
+            break
+
+    if "_" in letras_descobertas:
+        print("\nVocê perdeu, a palavra era:", palavra)
+
+if __name__ == "__main__":
+    game()
 
 
     
